@@ -38,10 +38,10 @@ module.exports = (app) => {
 
     });
 
-    // app.delete('/api.notes/:id', (req, res) => {
-    //     noteData.splice(req.params.id, 1);
-    //     updateDb();
-    // });
+    app.delete('/api/notes/:id', (req, res) => {
+        noteData.splice(req.params.id, 1);
+        updateDb();
+    });
 
     
 
