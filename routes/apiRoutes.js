@@ -11,6 +11,18 @@ module.exports = (app) => {
             return true;
         });
     }
+    app.get('/api/notes/:id', (req, res) => {
+        const selected = req.params.id;
+        console.log(selected);
+
+        for (let i = 0; i <noteData.length; i++){
+            const currentNote = noteData[i];
+            if (selected === currentNote.id){
+                return res.json(currentNote);
+            }
+        }
+
+    });
 
     app.post('/api/notes', (req, res) => {
         
@@ -23,8 +35,6 @@ module.exports = (app) => {
 
     });
 
-    // app.get('/api/notes/:id', (req, res) => {
-    //     res.json(noteData[req.params.id]);
-    // });
+    
 
 };
