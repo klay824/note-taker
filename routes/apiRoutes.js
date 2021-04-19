@@ -11,6 +11,9 @@ module.exports = (app) => {
             return true;
         });
     }
+
+    app.get('/db/db.json', (req, res) => res.json(noteData));
+
     app.get('/api/notes/:id', (req, res) => {
         const activeNote = req.params.id;
         console.log(activeNote);
